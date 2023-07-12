@@ -11,7 +11,7 @@ export default function MealItem({
 }) {
   return (
     <View style={styles.mealItem}>
-      <Pressable android_ripple={{color: '#ccc'}}  >
+      <Pressable android_ripple={{color: '#ccc'}}  onPress={onPress} >
         <View style={styles.innerContainer}>
           <View>
             <Image source={{ uri: imageUrl }} style={styles.image} />

@@ -4,7 +4,7 @@ import  { MEALS } from '../data/dummy-data'
 import Meal from '../models/meal';
 import MealItem from '../components/MealItem';
 
-export default function MealsOverviewScreen({ route}) {
+export default function MealsOverviewScreen({ route, navigation}) {
     const catId = route.params.catagoryId; 
 
     const displayedMeals = MEALS.filter((mealItem) => {
@@ -20,8 +20,12 @@ export default function MealsOverviewScreen({ route}) {
             affordability: itemData.item.affordability,
 
         }
+        
+        const onPressHandler = () => {
+            navigation.navigate("MealDetail");}
+
         return (
-            <MealItem {...mealItemProps} />
+            <MealItem {...mealItemProps} onPress={onPressHandler} />
         ) 
     }
 
